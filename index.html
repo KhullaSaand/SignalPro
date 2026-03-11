@@ -229,8 +229,6 @@ body{font-family:var(--fm);background:var(--bg);color:var(--text);min-height:100
 .search-ad{padding:0 16px 10px 16px;background:var(--bg);}
 .search-ad-inner{background:var(--bg3);border:1px dashed var(--border);border-radius:9px;height:40px;display:flex;align-items:center;justify-content:center;font-size:0.65rem;color:var(--muted);letter-spacing:1px;font-family:var(--fmono);}
 </style>
-<!-- Google AdSense — ADD YOUR PUBLISHER ID BELOW WHEN APPROVED -->
-<!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
 </head>
 <body>
 
@@ -238,25 +236,29 @@ body{font-family:var(--fm);background:var(--bg);color:var(--text);min-height:100
 <div class="hdr">
   <div class="logo">Signal<b>Pro</b></div>
   <div class="hdr-r">
-    <div class="live-badge"><div class="live-dot"></div><span class="live-lbl">LIVE</span></div>
-    <div class="ws-badge" id="ws-badge" style="display:none">⚡ WS</div>
+    <div class="live-badge" id="live-badge"><div class="live-dot"></div><span class="live-lbl" id="live-lbl">LIVE</span></div>
     <button class="theme-btn" onclick="toggleTheme()">☀/☾</button>
   </div>
 </div>
 
 <!-- MARKET TABS -->
 <div class="mkt-tabs">
-  <div class="mkt-tab active" onclick="switchMkt('crypto',this)">₿ Crypto</div>
-  <div class="mkt-tab" onclick="switchMkt('india',this)">🇮🇳 India</div>
-  <div class="mkt-tab" onclick="switchMkt('us',this)">🇺🇸 US</div>
-  <div class="mkt-tab" onclick="switchMkt('forex',this)">💱 Forex</div>
-  <div class="mkt-tab" onclick="openOC()">📊 Options</div>
+  <div class="mkt-tab active" id="tab-crypto" onclick="switchMkt('crypto',this)">₿ Crypto</div>
+  <div class="mkt-tab" id="tab-india"  onclick="switchMkt('india',this)">🇮🇳 India</div>
+  <div class="mkt-tab" id="tab-us"     onclick="switchMkt('us',this)">🇺🇸 US</div>
+  <div class="mkt-tab" id="tab-forex"  onclick="switchMkt('forex',this)">💱 Forex</div>
+  <div class="mkt-tab" id="tab-oc"     onclick="openOC()">📊 Options</div>
 </div>
 
-<!-- LIVE TICKER -->
-<!-- TAB SWITCH AD BAR -->
+<!-- TAB AD BAR -->
 <div class="tab-ad-bar" id="tab-ad-bar">
-  <div class="ad-placeholder" style="height:50px;max-width:320px;margin:0 auto;">AD SPACE · 320×50</div>
-  <!-- REPLACE WITH REAL ADSENSE:
-  <ins class="adsbygoogle" style="display:inline-block;width:320px;height:50px"
-    data-ad-client="ca-pub-XXXX
+  <div class="ad-placeholder" style="height:50px;max-width:320px;margin:0 auto;display:flex;align-items:center;justify-content:center;font-size:0.65rem;color:var(--muted);">AD SPACE · 320×50</div>
+</div>
+
+<!-- TICKER -->
+<div class="ticker-wrap"><div class="ticker-track" id="ticker"></div></div>
+
+<!-- INDICES -->
+<div class="indices-bar">
+  <div class="indices-bar-inner" id="indices-bar">
+    <div class="idx-card"><div class="idx-loading">Loading...</div></div>
